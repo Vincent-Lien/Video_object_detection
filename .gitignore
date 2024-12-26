@@ -1,1 +1,5 @@
+person_cats_V3_frames/
+data/
+output_frames/
+output_frames_cat/
 *.pt
