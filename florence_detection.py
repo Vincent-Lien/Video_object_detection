@@ -9,6 +9,7 @@ import cv2
 import numpy as np
 import matplotlib.pyplot as plt
 import matplotlib.patches as patches
+import csv
 
 model_id = 'microsoft/Florence-2-large'
 model = AutoModelForCausalLM.from_pretrained(model_id, trust_remote_code=True, torch_dtype='auto').eval().cuda()
@@ -49,9 +50,13 @@ cap = cv2.VideoCapture(source)
 # Get the frames per second (fps) of the input video
 fps = cap.get(cv2.CAP_PROP_FPS)
 
+# Create the output directory if it doesn't exist
+output_dir = 'video'
+os.makedirs(output_dir, exist_ok=True)
+
 # Get video writer initialized to save the output video
 fourcc = cv2.VideoWriter_fourcc(*'mp4v')
-out = cv2.VideoWriter('output_florence.mp4', fourcc, fps, (int(cap.get(3)), int(cap.get(4))))
+out = cv2.VideoWriter('video/output_florence.mp4', fourcc, fps, (int(cap.get(3)), int(cap.get(4))))
 
 
 bbox_task_prompt = '<CAPTION_TO_PHRASE_GROUNDING>'
@@ -96,6 +101,15 @@ with tqdm(total=total_frames, desc="Processing Video") as pbar:
         cv2.putText(frame, f'Person: {person_count}', (10, 70), cv2.FONT_HERSHEY_SIMPLEX, 1, (0, 0, 255), 2, cv2.LINE_AA)
         cv2.putText(frame, f'Cats: {cat_count}', (10, 110), cv2.FONT_HERSHEY_SIMPLEX, 1, (0, 0, 255), 2, cv2.LINE_AA)
         out.write(frame)
+
+        # Open CSV file in append mode
+        with open('frame_log/florence_detection.csv', 'a', newline='') as csvfile:
+            csvwriter = csv.writer(csvfile)
+            # Write the header if the file is empty
+            if csvfile.tell() == 0:
+                csvwriter.writerow(['frame', 'person', 'cat'])
+            # Write the frame number, person count, and cat count
+            csvwriter.writerow([int(cap.get(cv2.CAP_PROP_POS_FRAMES)) - 1, person_count, cat_count])
         
         pbar.update(1)
 
