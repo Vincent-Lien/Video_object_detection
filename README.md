@@ -19,6 +19,9 @@ pip install -r requirements.txt
 ```
 
 ## Project Components
+### Input Files
+- `person_cats_V3.mp4`: Input video for processing
+- `person_cats_baseline.mp4`: Baseline video for comparison
 - `yolo_detection.py`: YOLO implementation
 - `florence_detection.py`: Florence-2 implementation
 - `yolo_florence_detection.py`: Combined detection
