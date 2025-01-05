@@ -1,2 +1,5 @@
 *.pt
 video_frames/
+video/output_florence_with_yolo(ID).mp4
+video/output_florence(ID).mp4
+video/output_yolo(ID).mp4
