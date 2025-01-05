@@ -28,6 +28,23 @@ pip install -r requirements.txt
 - `video2frame.py`: Frame extraction tool
 - `evaluation.ipynb`: Analysis and visualization
 
+## Demo Videos
+### Input Video
+![Input Video](person_cats_V3.mp4)
+
+### Baseline Video
+![Baseline Video](person_cats_baseline.avi)
+
+## Result Videos
+### YOLO Detection Result
+![YOLO Detection Result](video/output_yolo.mp4)
+
+### Florence Detection Result
+![Florence Detection Result](video/output_florence.mp4)
+
+### Combined Detection Result
+![Combined Detection Result](video/output_florence_with_yolo.mp4)
+
 ## Usage
 ### YOLO Detection
 ```bash
