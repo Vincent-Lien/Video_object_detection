@@ -29,21 +29,9 @@ pip install -r requirements.txt
 - `evaluation.ipynb`: Analysis and visualization
 
 ## Demo Videos
-### Input Video
-![Input Video](person_cats_V3.mp4)
+Please check out the demo videos on this [YouTube playlist](https://www.youtube.com/watch?v=GZvXXO5-d6g&list=PL5CSYCnSztknhQjGjRP9OFIskxG2mWMCM).
 
-### Baseline Video
-![Baseline Video](person_cats_baseline.avi)
-
-## Result Videos
-### YOLO Detection Result
-![YOLO Detection Result](video/output_yolo.mp4)
-
-### Florence Detection Result
-![Florence Detection Result](video/output_florence.mp4)
-
-### Combined Detection Result
-![Combined Detection Result](video/output_florence_with_yolo.mp4)
+Alternatively, you can find the demo videos in the [video directory](./video/).
 
 ## Usage
 ### YOLO Detection
