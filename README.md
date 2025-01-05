@@ -33,11 +33,6 @@ pip install -r requirements.txt
 - `/frame_log/`: Detection count logs (CSV)
 - `/video_frames/`: Extracted frames
 
-## Demo Videos
-Please check out the demo videos on this [YouTube playlist](https://www.youtube.com/watch?v=GZvXXO5-d6g&list=PL5CSYCnSztknhQjGjRP9OFIskxG2mWMCM).
-
-Alternatively, you can find the demo videos in the [video directory](./video/).
-
 ## Usage
 ### YOLO Detection
 ```bash
@@ -64,3 +59,8 @@ Parameters:
 
 ### Evaluation
 Open `evaluation.ipynb` in Jupyter Notebook to analyze detection results and view visualizations.
+
+## Demo Videos
+Please check out the demo videos on this [YouTube playlist](https://www.youtube.com/watch?v=GZvXXO5-d6g&list=PL5CSYCnSztknhQjGjRP9OFIskxG2mWMCM).
+
+Alternatively, you can find the demo videos in the [video directory](./video/).
